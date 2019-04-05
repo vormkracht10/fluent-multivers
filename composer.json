@@ -1,0 +1,38 @@
+{
+    "name": "vormkracht10/fluent-multivers",
+    "description": "Unit4 Multivers Fluent wrapper",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Vormkracht10",
+            "email": "support@vormkracht10.nl",
+            "homepage": "https://vormkracht10.nl"
+        }
+    ],
+    "homepage": "https://github.com/vormkracht10/fluent-multivers",
+    "keywords": ["Laravel", "Multivers", "Unit4"],
+    "require": {
+        "illuminate/support": "~5",
+        "laveto/laravel-multivers": "^1.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Vormkracht10\\Multivers\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Vormkracht10\\Multivers\\Tests\\": "tests"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Vormkracht10\\FluentMultivers\\FluentMultiversServiceProvider"
+            ],
+            "aliases": {
+                "Multivers": "Vormkracht10\\FluentMultivers\\Facades\\FluentMultivers"
+            }
+        }
+    }
+}
