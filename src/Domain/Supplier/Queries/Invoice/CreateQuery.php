@@ -38,7 +38,7 @@ class CreateQuery extends Builder
         return false;
     }
 
-    public function validate(array $attributes)
+    public function validate(array $attributes): bool
     {
         return isset(
             $attributes['fiscalYear'],
