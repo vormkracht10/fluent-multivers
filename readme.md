@@ -78,6 +78,32 @@ $accounts = Account::query()->fiscalYearOrFail(2019);
 $account = Account::query()->findOrFail('0025');
 ```
 
+## Journals
+
+### General
+
+```php
+use Vormkracht10\FluentMultivers\Domain\Journal\Journal;
+```
+
+#### Getting all journals
+
+```php
+$journals = Journal::query()->all();
+```
+
+#### Getting all journals for a fiscal year
+
+```php
+$journals = Journal::query()->fiscalYearOrFail(2019);
+```
+
+#### Getting one specific journal
+
+```php
+$journal = Journal::query()->findOrFail('I');
+```
+
 ## Suppliers
 
 ### General
