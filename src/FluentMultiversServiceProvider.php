@@ -3,6 +3,7 @@
 namespace Vormkracht10\FluentMultivers;
 
 use Illuminate\Support\ServiceProvider;
+use Vormkracht10\FluentMultivers\Services\FluentMultivers;
 
 class FluentMultiversServiceProvider extends ServiceProvider
 {

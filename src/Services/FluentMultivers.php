@@ -1,6 +1,6 @@
 <?php
 
-namespace Vormkracht10\FluentMultivers;
+namespace Vormkracht10\FluentMultivers\Services;
 
 use Illuminate\Routing\Redirector;
 use Illuminate\Http\RedirectResponse;
