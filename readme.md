@@ -58,6 +58,26 @@ Route::any('multivers/return', function () {
 
 At this point, your application is authenticated to interact with the Multivers API. Reminder: this is apart from the authorization your organization needs to use the API to start with.
 
+## Accounts
+
+### General
+
+```php
+use Vormkracht10\FluentMultivers\Domain\Acount\Acount;
+```
+
+#### Getting all accounts for a fiscal year
+
+```php
+$accounts = Account::query()->fiscalYearOrFail(2019);
+```
+
+#### Getting one specific account
+
+```php
+$account = Account::query()->findOrFail('0025');
+```
+
 ## Suppliers
 
 ### General
