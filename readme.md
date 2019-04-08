@@ -357,3 +357,21 @@ $subadmins = SubAdmin::query()->all();
 ```php
 $subadmin = SubAdmin::query()->findOrFail('001');
 ```
+
+## VatCodes
+
+```php
+use Vormkracht10\FluentMultivers\Domain\VatCode\VatCode;
+```
+
+#### Getting all vatcodes
+
+```php
+$vatcodes = VatCode::query()->all();
+```
+
+#### Getting one specific vatcode
+
+```php
+$vatcode = VatCode::query()->findOrFail(1);
+```
