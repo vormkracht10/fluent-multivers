@@ -339,3 +339,21 @@ $order = Order::create([
     ...
 ]); // Multivers invoice on success, false on failure.
 ```
+
+## SubAdmins
+
+```php
+use Vormkracht10\FluentMultivers\Domain\SubAdmin\SubAdmin;
+```
+
+#### Getting all subadmins
+
+```php
+$subadmins = SubAdmin::query()->all();
+```
+
+#### Getting one specific subadmin
+
+```php
+$subadmin = SubAdmin::query()->findOrFail('001');
+```
