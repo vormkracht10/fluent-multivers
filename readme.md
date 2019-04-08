@@ -78,6 +78,18 @@ $accounts = Account::query()->fiscalYearOrFail(2019);
 $account = Account::query()->findOrFail('0025');
 ```
 
+#### Creating a new account
+
+```php
+// The following are the minimum required fields
+$account = Account::new();
+$account->AccountId = '9992';
+$account->accountType = 1;
+$account->fiscalYear = 2019; // If not set, falls back to current year
+$account->AuditionDescription = 'Test';
+$account = $account->save();
+```
+
 ## Journals
 
 ### General
@@ -102,6 +114,17 @@ $journals = Journal::query()->fiscalYearOrFail(2019);
 
 ```php
 $journal = Journal::query()->findOrFail('I');
+```
+
+#### Creating a new journal
+
+```php
+// The following are the minimum required fields
+$journal = Journal::new();
+$journal->accountId = '0020';
+$journal->journalId = 'ABC';
+$journal->fiscalYear = 2019; // If not set, falls back to current year
+$journal = $journal->save();
 ```
 
 ## Suppliers
