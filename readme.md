@@ -278,3 +278,64 @@ $invoice = Invoice::create([
     ...
 ]); // Multivers invoice on success, false on failure.
 ```
+
+### Orders
+
+```php
+use Vormkracht10\FluentMultivers\Domain\Order\Order;
+```
+
+#### Getting a listing of orders
+
+```php
+$orders = Order::query()->openOrdersOrFail();
+$orders = Order::query()->byProjectOrFail($projectId);
+$orders = Order::query()->byInvoiceOrFail($invoiceId);
+```
+
+#### Getting a customer's orders based on multiple conditionals
+
+```php
+$orders = Order::query()->forCustomer($customerId);
+// The following statements are optional, `get()` is required to get the results, obviously.
+$order = $order->whereMinDate('1-4-2019')
+               ->whereMaxDate('10-4-2019')
+               ->whereMinPrice(5)
+               ->whereMaxPrice(10)
+               ->whereOpen(true)
+               ->whereFiscalYear(2019)
+               ->get();
+```
+
+#### Getting one specific order
+
+```php
+$order = Order::query()->findOrFail('20190038');
+```
+
+#### Creating a new order
+
+```php
+// The following fields are the minimum required fields
+$order = Order::new();
+
+$order->customerId = '1006';
+$order->paymentConditionId = '14';
+$order->addLine([
+    'accountId' => '7030',
+    'description' => 'Testorder',
+    'productId' => '80.300',
+    'quantityOrdered' => 10,
+]);
+
+$order = $order->save(); // Multivers order on success, false on failure.
+```
+
+Instead of setting each variable as done above, you may pass everything in an array:
+
+```php
+$order = Order::create([
+    'customerId' => '1006',
+    ...
+]); // Multivers invoice on success, false on failure.
+```
