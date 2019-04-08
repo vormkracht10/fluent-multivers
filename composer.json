@@ -17,12 +17,12 @@
     },
     "autoload": {
         "psr-4": {
-            "Vormkracht10\\Multivers\\": "src/"
+            "Vormkracht10\\FluentMultivers\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Vormkracht10\\Multivers\\Tests\\": "tests"
+            "Vormkracht10\\FluentMultivers\\Tests\\": "tests"
         }
     },
     "extra": {
